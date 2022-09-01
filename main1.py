@@ -7,8 +7,9 @@ for i in range(0,7):
     # 构造数据
     x = np.arange(1, 30)
     y1 = 5 * x ** 0
-    y2 = 10 - (5.5 * (np.exp(-0.5 * x) + 1.1) + 0.1 * np.sin(x)) + 0.03 * x
-    y3 = [12, 10, 8, 11, 9, 8, 10, 9, 7, 10, 9, 7, 5, 9, 8, 6, 6,6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+    if k == 0:
+        y2 = 10 - (5.5 * (np.exp(-0.5 * x) + 1.1) + 0.1 * np.sin(x)) + 0.03 * x
+        y3 = [12, 10, 8, 11, 9, 8, 10, 9, 7, 10, 9, 7, 5, 9, 8, 6, 6,6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
     y4 = 10 - (5.5 * (np.exp(-0.5 * x) + 1.1) + 0.1 * np.sin(x)) + 0.03 * x
     for j in range(k,14):
         y2[15+j] = y2[15+j]+np.random.uniform(-0.1, 0.1)
@@ -51,7 +52,7 @@ for i in range(0,7):
     plt.savefig("{}".format(k), dpi=600)
     plt.xticks([])
     plt.yticks([])
-    plt.text(k+15, 35, 'prediction horizon', fontsize=12, color='g')
+    plt.text(k+15.5, 35, 'prediction horizon', fontsize=12, color='g')
 plt.show()
 
 
